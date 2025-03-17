@@ -1,9 +1,9 @@
 from .database import MongoDB
 class Aggregator:
     def __init__(self, mongodb : MongoDB, collection_name : str):
-        self.mongodb = mongodb
-        self.aggregator = []
-        self.collection_name = collection_name
+        self._mongodb = mongodb
+        self._aggregator = []
+        self._collection_name = collection_name
 
     def join(self, 
             collection_name : str, 
@@ -14,7 +14,7 @@ class Aggregator:
         """
         Joins two collections
         """
-        self.aggregator.append({
+        self._aggregator.append({
             '$lookup': {
                 'from': collection_name,
                 'localField': field,
@@ -28,12 +28,14 @@ class Aggregator:
         """
         Filters the collection
         """
-        self.aggregator.append({
+        self._aggregator.append({
             '$match': query
         })
+
+        return self
     
     def aggregate(self):
         """
         Aggregates the collections
         """
-        return self.mongodb.aggregate(self.collection_name, self.aggregator)
+        return self._mongodb.aggregate(self._collection_name, self._aggregator)
