@@ -2,7 +2,6 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 from pydantic import BaseModel
 import os
-from .aggregator import Aggregator
 class MongoDB:
     
     def __init__(self):
@@ -74,6 +73,7 @@ class MongoDB:
     
     @classmethod
     def begin_aggregate(cls, collection_name: str):
+        from .aggregator import Aggregator
         
         return Aggregator(cls, collection_name)
     
