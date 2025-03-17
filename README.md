@@ -27,10 +27,32 @@ MongoDB.all('<COLLECTION-NAME-HERE>')
 
 # supposed that we have a 'users' collection
 
-MongoDB.create('<COLLECTION-NAME-HERE>',
+MongoDB.create('users',
     {
         'name': 'John Doe', 
         'email': 'johndoe@gmail.com'
     }
 )
+```
+
+- Update a document from a collection:
+
+```python
+
+MongoDB.update('users', {
+    'name' : 'John Doe'
+}, {
+    'name' : 'John Sins'
+})
+
+```
+
+- Delete a document from a collection:
+
+```python
+
+MongoDB.delete('users', {
+    'name' : 'John Sins'
+})d
+
 ```

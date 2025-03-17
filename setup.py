@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="simple-mongo",
-    version="0.0.4",
+    version="0.0.5",
     packages=find_packages(include=['simple_mongo']),
     author="Marjon Godito",
     description="A simple MongoDB module with less configuration",
