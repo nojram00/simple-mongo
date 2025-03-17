@@ -89,4 +89,7 @@ class MongoDB:
         """
         Paginates the collection
         """
-        return cls.collection(collection_name).find(query).skip((page-1)*limit).limit(limit)
+        return cls.collection(collection_name) \
+                    .find(query)\
+                    .skip((page-1)*limit)\
+                    .limit(limit)
