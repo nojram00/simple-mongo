@@ -1,5 +1,7 @@
 # Simple Mongo (A Simple Mongodb Library)
 
+Pypi link: <a href="https://pypi.org/project/simple-mongo/">https://pypi.org/project/simple-mongo/</a>
+
 ## Getting Started:
 
 - To run and test the library, it should required to provide an environment variables by creating an <i>.env</i> file:
