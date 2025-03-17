@@ -14,18 +14,26 @@
 - Get All documents within a collection:
 
 ```python
+# supposed that we have a 'users' collection
 
 from simple_mongo.database import MongoDB
 
-MongoDB.all('<COLLECTION-NAME-HERE>')
+MongoDB.all('users')
+
+```
+
+- Get a specific document:
+
+```python
+MongoDB.find_one({
+    'name' : 'Taylor Swift'
+})
 
 ```
 
 - Create a simple data to a collection:
 
 ```python
-
-# supposed that we have a 'users' collection
 
 MongoDB.create('users',
     {
@@ -53,6 +61,10 @@ MongoDB.update('users', {
 
 MongoDB.delete('users', {
     'name' : 'John Sins'
-})d
+})
 
 ```
+
+<hr/>
+
+Repository Link: <a href="https://github.com/nojram00/simple-mongo">https://github.com/nojram00/simple-mongo</a>
