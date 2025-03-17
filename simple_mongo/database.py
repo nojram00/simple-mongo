@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from dotenv import load_dotenv
-from pydantic import BaseModel
 import os
 class MongoDB:
     
@@ -26,13 +25,10 @@ class MongoDB:
         return cls().db[collection_name]
     
     @classmethod
-    def create(cls, collection_name, data : dict | BaseModel):
+    def create(cls, collection_name, data : dict):
         """
         Creates a new document in the collection
         """
-
-        if isinstance(data, BaseModel):
-            data = data.model_dump()
 
         return cls.collection(collection_name).insert_one(data)
     
