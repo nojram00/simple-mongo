@@ -1,0 +1,8 @@
+.venv
+build
+dist
+*.egg-info
+.env
+*.pyc
+test/__pycache__
+simple_mongo/__pycache__
